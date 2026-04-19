@@ -20,6 +20,7 @@ body { background-color: var(--bg-color); color: var(--text-color); line-height:
 .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .header-side { flex: 1; }
 .header-center { flex: 2; text-align: center; }
+.header-side.right-side { text-align: right; }
 .icon-btn { background: transparent; border: none; font-size: 1.8rem; cursor: pointer; transition: transform 0.2s ease; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
 .icon-btn:hover { transform: scale(1.1); }
 
@@ -111,8 +112,10 @@ button { font-family: inherit; }
 
 @media (max-width: 768px) {
     .app-container { margin: 10px; border-radius: 4px; }
-    .header-content { flex-direction: column; gap: 10px; text-align: center; }
-    .header-side { text-align: center !important; }
+    .header-content { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; }
+    .header-center { width: 100%; order: 1; margin-bottom: 10px; }
+    .header-side { order: 2; text-align: left !important; }
+    .header-side.right-side { order: 3; text-align: right !important; }
     .season-tabs, .settings-tabs { flex-direction: column; }
     .task-content-container, .settings-pane { padding: 15px; }
     .editor-controls { flex-direction: column; align-items: stretch !important; gap: 10px !important; }
